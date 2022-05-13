@@ -1,0 +1,340 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <select name="Select" class="selectfield" id="ddlcategory">
+        <option id="0">Select your from location</option>
+        
+        <?php
+        $con = mysqli_connect('localhost', 'root', '','travel_db');
+        
+                if ($con) {
+                    die("Connection Failed: " . mysqli_connect_error());
+                }
+                echo"Connected Successfully";
+        
+        
+        $sql=mysqli_query("SELECT from_location FROM bus_details");
+        while($category=mysqli_fetch_array($sql)){
+        ?>
+        
+        <option id="<?php echo $category['busNo']; ?>">
+        <?php echo $category['from_location']; ?></option>
+        <?php 
+        } 
+        ?>
+        </select>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Book Your Ticket Let's Travel Website' </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            background: url("https://images.unsplash.com/photo-1532939163844-547f958e91b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80");
+          
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 800px;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background-size: cover;
+        }
+
+        .content {
+            width: 420px;
+            height: 720px;
+            border-radius: 10px;
+            padding: 60px 50px;
+            margin-top: 60px;
+            box-shadow: -8px -7px 12px black, 3px 3px 7px whitesmoke;
+        }
+
+
+            .content .text {
+                font-size: 25px;
+                font-weight: 600;
+                margin-bottom: 35px;
+                color: black;
+            }
+
+            .content .field {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                position: relative;
+            }
+
+        .field input {
+            height: 100%;
+            width: 100%;
+            padding-left: 45px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            color: whitesmoke; /*#e0d2d2;*/
+            border: 1px solid rgba(255, 255, 255, 0.438);
+            border-radius: 8px;
+            background: rgba(105, 105, 105, 0);
+        }
+
+
+            .field input::placeholder {
+                color: black;
+            }
+
+
+        .field:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        .field span {
+            position: absolute;
+            width: 50px;
+            line-height: 50px;
+            color: #ffffff;
+        }
+
+        .field select {
+            height: 100%;
+            width: 100%;
+            padding-left: 45px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            color: whitesmoke; /*#e0d2d2;*/
+            border: 1px solid rgba(255, 255, 255, 0.438);
+            border-radius: 8px;
+            background: rgba(105, 105, 105, 0);
+        }
+
+        button {
+            margin: 25px 0 0 0;
+            width: 100%;
+            height: 50px;
+            color: black; /*rgb(238, 226, 226);*/
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.438);
+            border-radius: 8px;
+            background: rgba(105, 105, 105, 0);
+            margin-top: 40px;
+            outline: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .content .or {
+            color: rgba(255, 255, 255, 0.733);
+            margin-top: 9px;
+        }
+
+        .full-page {
+            height: 100%;
+            width: 80%;
+            background-image: linear-gradient(rgba(0,0,0,0,4),rgba(0,0,0,0,4)),url(img/bg1.jpg);
+            background-position: center;
+            background-size: cover;
+            position: initial;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: baseline;
+            padding: 15px;
+            padding-left: 30px;
+            padding-right: -10px;
+            padding-top: 10px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+            nav ul {
+                display: inline-block;
+                list-style: none;
+                font-size: 20px;
+                font-family: sans-serif;
+            }
+
+                nav ul li {
+                    display: inline-block;
+                    margin-right: 20px;
+                }
+
+                    nav ul li a {
+                        text-decoration: none;
+                        font-size: 20px;
+                        color: black;
+                        font-family: sans-serif;
+                    }
+
+                    nav ul li button {
+                        font-size: 20px;
+                        color: black;
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                        cursor: pointer;
+                        font-family: sans-serif;
+                    }
+
+                        nav ul li button :hover {
+                            color: aqua;
+                        }
+
+                    nav ul li a :hover {
+                        color: aqua;
+                    }
+
+        a {
+            text-decoration: none;
+            color: palevioletred;
+            font-size: 28px;
+        }
+
+
+        .icon-button {
+            margin-top: 15px;
+        }
+
+            .icon-button span {
+                padding-left: 17px;
+                padding-right: 17px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                color: rgba(244, 247, 250, 0.795);
+                border-radius: 5px;
+                line-height: 30px;
+                background: rgba(255, 255, 255, 0.164);
+                backdrop-filter: blur(10px);
+            }
+
+                .icon-button span.facebook {
+                    margin-right: 17px;
+                }
+
+                button:hover,
+                .icon-button span:hover {
+                    background-color: #babecc8c;
+                }
+    </style>
+</head>
+<body>
+
+    <div class=" full-page">
+
+        <div class=" navbar">
+
+            <h1>WELCOME</h1>
+            <nav>
+                <ul id="MenuItems">
+                    <li>
+                        <button href="#"> Home </button>
+                    </li>
+                    <li><button href="#"> Contact/About US </button></li>
+                    <li><button href="#"> Services </button></li>
+                    <li>
+                    <button onclick=" btnClicked()" class="btn"> LogOut </button>
+            <script>
+            function btnClicked() {
+                window.open("http://localhost:60371/Admin.html");
+            }
+
+            </script>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="text">Book Ticket </div>
+        <form action="#">
+
+
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" placeholder="Full Name" required>
+
+            </div>
+
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="email" placeholder="Email Id" required>
+            </div>
+
+            <br> <div class="field">
+                <span class="fa "></span>
+                <input type="text" placeholder="Address" required>
+
+            </div></br>
+
+            <div class="field">
+                <span class="fa "></span>
+                <input type="text" placeholder="contact no." required>
+
+            </div> 
+            <br> <div class="field">
+              
+            <input type="date" id="checkin-date" name="checkin" placeholder="Put a Date" required>
+        </div>  <br>
+            <div class="field">
+                <select name="owner">
+                    <?php 
+                    
+                    $sql = mysqli_query($connection, "SELECT from_location FROM bus_details");
+                    
+                    while ($row = $rs->fetch_assoc()){
+                    
+                    ?>
+                    <option value="owner1"><?php echo $row['from_location']; ?></option>
+                    
+                    <?php
+                    // close while loop 
+                    }
+                    ?>
+            <select>
+                <option value="">Choose  from location (Depature) </option>
+                <option value="connecting">kalyan,kalyan west</option>
+                <option value="adjoining">thane,thane east</option>
+                <option value="adjacent">Powai,hiranandani powai</option>
+            </select>
+        </div> <br>
+            <div class="field">
+            <select>
+                <option value="">Choose  to location (Depature) </option>
+                <option value="connecting">kalyan,kalyan west</option>
+                <option value="adjoining">thane,thane east</option>
+                <option value="adjacent">Powai,hiranandani powai</option>
+            </select>
+        </div>
+          <button onclick=" btnClicked()" class="btn"> Book Ticket </button>
+            <script>
+            function btnClicked() {
+                window.open("http://localhost:60371/Login.html");
+            }
+
+            </script>
+        </form>
+    </div>
+
+</body>
+</html>

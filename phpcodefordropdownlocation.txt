@@ -1,0 +1,64 @@
+<?php   
+            $con = mysqli_connect('localhost', 'root', '','travel_db');
+            $result = $con->query("select `from_location` from `bus_details`");
+            if (mysqli_num_rows($result) > 0)
+             {
+          echo "<select value=''  name='txtfrom_location' id='from_location' class='btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>";
+           echo "<select  name='TxtFromLocation' id='TxtFromLocation' class='btn-secondary dropdown-toggle' data-bs-toggle='dropdown'>";
+           echo "<option> Choose From Location </option>";
+            $i=0;
+            while ($row = mysqli_fetch_array($result)) 
+           {
+    
+            echo "<option value='' name ='txtFrom_location' id='txtFrom_location'>".$row['from_location']."</option>";
+            echo "<option value='' name ='txtFrom_location' id='txtFrom_location'>".$row['from_location']."</option>"; 
+            $i++;
+        }
+        echo "</select>";
+    }
+    else {
+    echo "No result found";
+    }
+            ?>
+ </div> <br>
+            <div class="field">
+            <?php   
+            $result = $con->query("select `to_location` from `bus_details`");
+            if (mysqli_num_rows($result) > 0)
+             {
+            echo "<select value= 'Choose to location' name='txtto_location' id='txtto_location' class='btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>";
+            echo "<option> Choose To Location </option>";
+            $i=0;
+            while ($row = mysqli_fetch_array($result)) 
+           {
+    
+            echo "<option value=' Choose From Location' name='txtto_location' id='txtto_location'>".$row['to_location']."</option>";
+           $i++;
+        }
+        echo "</select>";
+    }
+    else {
+    echo "No result found";
+    }
+            ?>
+        </div> <br>
+        <div class="field">
+            <?php   
+            $result = $con->query("select `busService` from `bus_details`");
+            if (mysqli_num_rows($result) > 0)
+             {
+            echo "<select value= 'Choose from location' name='busService' id='busService' class='btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>";
+            echo "<option> Choose Bus Service </option>";
+            $i=0;
+            while ($row = mysqli_fetch_array($result)) 
+           {
+    
+            echo "<option value=' Choose From Location' id='busService'>".$row['busService']."</option>";
+           $i++;
+        }
+        echo "</select>";
+    }
+    else {
+    echo "No result found";
+    }
+            ?>

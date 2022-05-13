@@ -1,0 +1,187 @@
+<!-----<!DOCTYPE html> 
+<html> 
+    <head>
+        <style> 
+
+.container{  
+    float: left;  
+    margin: 10px;  
+}  
+.right{  
+    float: left;  
+    margin: 10px;  
+    color: black;  
+    font-size: 20px;  
+    font-weight:bold;  
+}  
+.radio {  
+    width: 15px;  
+    position: absolute;  
+}  
+.radio label {  
+    width: 20px;  
+    height: 20px;  
+    cursor: pointer;  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    background: white;  
+    border-radius: 50px;  
+    box-shadow: inset 0px 1px 1px white, 3px 3px 9px rgba(0,0,0,0.5);  
+    border: 1px solid black;  
+}  
+.radio label:after {  
+    content: '';  
+    position: absolute;  
+    top: 4px;  
+    left: 4px;  
+    border: 6px solid black;  
+    border-radius: 50px;  
+    opacity: 0;  
+    }  
+.radio label:hover::after {  
+    opacity: 0.3;  
+    }  
+.radio input[type=radio] {   
+    position:relative;
+    right:2000%;
+}  
+.radio input[type=radio]:checked + label:after {  
+     opacity: 1;  
+    }          
+      </style> 
+    </head> 
+    <body> 
+        
+<div class="container">
+<div class="radio">
+<input type="radio" value="Credit/Debit Card" name='paymentmethod' id='credit/debit card' />
+<label for="credit/debit card"></label>
+</div>
+</div>
+<div class="right">Credit/Debit Card</div>
+<div class="radio">
+    <input type="radio" value="UPI" name='paymentmethod' id='upi' />
+    <label for="upi"></label>
+    </div>
+    </div>
+    <div class="right">UPI </div>
+    <div class="radio">
+        <input type="radio" value="Phone pe/Gpay" name='paymentmethod' id='phone pe/gpay' />
+        <label for="phone pe/gpay"></label>
+        </div>
+        </div>
+        <div class="right">Phone pe/Gpay</div>
+        <div class="radio">
+            <input type="radio" value="Cash" name='paymentmethod' id='cash' />
+            <label for="cash"></label>
+            </div>
+            </div>
+            <div class="right">Cash</div>
+                         
+        </center> 
+    </body> 
+</html> ---->
+<!DOCTYPE html> 
+<html> 
+    <head>
+<style> 
+
+$primary = #225CFF;
+$gray = #C8CCD4;
+
+body
+  font-family: "Roboto", sans-serif
+
+.radio
+  position: relative
+  cursor: pointer
+  line-height: 20px
+  font-size: 14px
+  margin: 15px
+  .label
+    position: relative
+    display: block
+    float: left
+    margin-right: 10px
+    width: 20px
+    height: 20px
+    border: 2px solid $gray
+    border-radius: 100%
+    -webkit-tap-highlight-color: transparent
+    &:after
+      content: ''
+      position: absolute
+      top 3px
+      left 3px
+      width 10px
+      height 10px
+      border-radius 100%
+      background $primary
+      transform scale(0)
+      transition all .2s ease
+      opacity .08
+      pointer-events: none
+  &:hover
+    .label:after
+      transform scale(3.6)
+    
+  
+input[type="radio"]:checked + .label
+  border-color $primary
+  &:after
+    transform scale(1)
+    transition all .2s cubic-bezier(.35,.9,.4,.9)
+    opacity 1
+
+.cntr
+  position absolute
+  top calc(50% - 10px)
+  left 0
+  width 100%
+  text-align center
+
+.hidden
+  display none
+  
+//dribbble 
+.credit
+  position: fixed
+  right: 20px
+  bottom: 20px
+  transition: all .2s ease
+  -webkit-user-select: none
+  user-select: none
+  opacity: .6
+  img
+    width: 72px
+  &:hover
+    transform: scale(.95)
+    </style>
+    <body>
+<div class="cntr">
+  
+    <label for="opt1" class="radio">
+      <input type="radio" name="rdo" id="opt1" class="hidden"/>
+      <span class="label"></span>Credit/Debit Card
+    </label>
+    
+    <label for="opt2" class="radio">
+      <input type="radio" name="rdo" id="opt2" class="hidden"/>
+      <span class="label"></span>UPI
+    </label>
+    
+    <label for="opt3" class="radio">
+      <input type="radio" name="rdo" id="opt3" class="hidden"/>
+      <span class="label"></span>Gpay/ Phone pe
+    </label>
+    
+    <label for="opt4" class="radio">
+      <input type="radio" name="rdo" id="opt4" class="hidden"/>
+      <span class="label"></span>cash
+    </label>
+    
+  </div>
+  
+    </body> 
+</html>

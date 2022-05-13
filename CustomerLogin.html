@@ -1,0 +1,277 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Customer Login | LetsTravel</title>
+    
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Login page of Let's Travel Website' </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            background: url("https://th.bing.com/th/id/R.b05f921093514849e453f3fd08c5f09c?rik=9sQ%2fSL7i2n1zQw&riu=http%3a%2f%2fwww.besthdwallpapergallery.com%2fwp-content%2fuploads%2f2019%2f06%2fPeople-in-Bus-Image.jpg&ehk=yBC7XadBGH6h0r38rSS7x0M%2f4kApV3FnFzD4u%2fKnfHI%3d&risl=&pid=ImgRaw&r=0");
+            /*https://c1.wallpaperflare.com/preview/592/961/272/bus-passengers-people-seats.jpg")*/
+            /*background: url("C:\Users\Lenovo\source\repos\LetsTravel\Img\bg1.jpg");*/
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background-size: cover;
+        }
+
+        .content {
+            width: 370px;
+            height: 390px;
+            border-radius: 10px;
+            padding: 40px 30px;
+            margin-top: 100px;
+            box-shadow: -3px -3px 9px #070000d3, 3px 3px 7px rgba(0, 8, 8, 0.993);
+        }
+
+
+            .content .text {
+                font-size: 25px;
+                font-weight: 600;
+                margin-bottom: 35px;
+                color: whitesmoke;
+            }
+
+            .content .field {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                position: relative;
+            }
+
+        .field input {
+            height: 100%;
+            width: 100%;
+            padding-left: 45px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            color: rgb(241, 243, 245); /*#e0d2d2;*/
+            border: 1px solid rgba(255, 255, 255, 0.438);
+            border-radius: 8px;
+            background: rgba(105, 105, 105, 0);
+        }
+
+
+            .field input::placeholder {
+                color: #dfaeae;
+            }
+
+        .field:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        .field span {
+            position: absolute;
+            width: 50px;
+            line-height: 50px;
+            color: #131212;
+        }
+
+
+
+        button {
+            margin: 25px 0 0 0;
+            width: 100%;
+            height: 50px;
+            color: white; /*rgb(238, 226, 226);*/
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.438);
+            border-radius: 8px;
+            background: rgba(105, 105, 105, 0);
+            margin-top: 40px;
+            outline: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .content .or {
+            color: rgba(255, 255, 255, 0.733);
+            margin-top: 9px;
+        }
+        .full-page {
+            height: 100%;
+            width: 80%;
+            background-image: linear-gradient(rgba(0,0,0,0,4),rgba(0,0,0,0,4)),url(img/bg1.jpg);
+            background-position: center;
+            background-size: cover;
+            position: initial;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: baseline;
+            padding:15px;
+            padding-left: 30px;
+            padding-right: -10px;
+            padding-top: 10px;
+        }
+        h1{
+            color: whitesmoke;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+            nav ul {
+                display: inline-block;
+                list-style: none;
+                font-size: 20px;
+                font-family: sans-serif;
+            }
+
+                nav ul li {
+                    display: inline-block;
+                    
+                    margin-right: 20px;
+                }
+
+                    nav ul li a {
+                        text-decoration: none;
+                        font-size: 20px;
+                        color: white;
+                        font-family: sans-serif;
+                    }
+
+                    nav ul li button {
+                        font-size: 20px;
+                        color: white  ;
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                        cursor: pointer;
+                        font-family: sans-serif;
+                    }
+
+                        nav ul li button :hover {
+                            color: rgb(74, 88, 88);
+                        }
+
+                    nav ul li a :hover {
+                        color: aqua;
+                    }
+
+        a {
+            text-decoration: none;
+            color: palevioletred;
+            font-size: 28px;
+        }
+
+
+        .icon-button {
+            margin-top: 15px;
+        }
+
+            .icon-button span {
+                padding-left: 17px;
+                padding-right: 17px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                color: rgba(16, 18, 20, 0.795);
+                border-radius: 5px;
+                line-height: 30px;
+                background: rgba(255, 255, 255, 0.164);
+                backdrop-filter: blur(10px);
+            }
+
+                .icon-button span.facebook {
+                    margin-right: 17px;
+                }
+
+                button:hover,
+                .icon-button span:hover {
+                    background-color: #3333368c;
+                }
+    </style>
+
+    <div class=" full-page">
+
+        <div class=" navbar">
+
+            <h1>WELCOME</h1>
+            <nav>
+                <ul id="MenuItems">
+                 
+                 <li>   <button onclick=" btnHome()" > Home </button>
+                    <script>
+     function btnHome() {
+         window.open("http://localhost/contact/Admin.html");
+
+     }
+                 </script>
+             </li>
+             <li><button onclick=" btnHome1()" > Contact/About US </button>
+             <script>
+     function btnHome1() {
+         window.open("http://localhost/contact/ContactUs.html");
+
+     }
+                 </script>
+         </li>
+           
+             <li>
+                 <button onclick=" btnHome2()" > Logout     </button></li>
+                 <script>
+     function btnHome2() {
+         window.open("http://localhost/contact/CustomerLogin.html");
+
+     }
+                 </script>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="text">Login</div>
+        <form name="frmContact" method="post" action="CustomerLogin.php">
+
+
+            <div class="field">
+                <span  class="fa fa-envelope icon"></span>
+                    
+                    <input type="email" name="txtEmail" id="txtEmail" placeholder="Email Id" value="" required>
+              </div>
+            <div class="field">
+                <span class="fa fa-lock"></span>
+                <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" value="" required>
+
+            </div>
+
+            <button onclick=" btnClicked()" class="btn"> Log In  </button>
+            <script>
+          function btnClicked() {
+              window.open("http://localhost/contact/CustomerBookingPage.php");
+          }
+          </script>
+        </form>
+    </div>
+
+</body>
+</html>
